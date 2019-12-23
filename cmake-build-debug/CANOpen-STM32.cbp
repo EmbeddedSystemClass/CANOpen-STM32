@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CANOpen-STM32"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CANOpen-STM32.elf">
+				<Option output="/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/CANOpen-STM32.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D__weak=__attribute__((weak))"/>
+					<Add option="-D__packed=__attribute__((__packed__))"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-DSTM32F446xx"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Inc"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/../../../../arm-none-eabi/include/c++/9.2.0"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/../../../../arm-none-eabi/include/c++/9.2.0/arm-none-eabi"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/../../../../arm-none-eabi/include/c++/9.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/include"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/include-fixed"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 CANOpen-STM32.elf"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CANOpen-STM32.elf/fast">
+				<Option output="/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/CANOpen-STM32.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D__weak=__attribute__((weak))"/>
+					<Add option="-D__packed=__attribute__((__packed__))"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-DSTM32F446xx"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Inc"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+					<Add directory="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/../../../../arm-none-eabi/include/c++/9.2.0"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/../../../../arm-none-eabi/include/c++/9.2.0/arm-none-eabi"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/../../../../arm-none-eabi/include/c++/9.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/include"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/include-fixed"/>
+					<Add directory="/usr/lib/gcc/arm-none-eabi/9.2.0/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 CANOpen-STM32.elf/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/cmsis_armcc.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/cmsis_armclang.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/cmsis_compiler.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/cmsis_gcc.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/cmsis_iccarm.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/cmsis_version.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_armv8mbl.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_armv8mml.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_cm0.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_cm0plus.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_cm1.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_cm23.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_cm3.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_cm33.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_cm4.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_cm7.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_sc000.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/core_sc300.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/mpu_armv7.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/mpu_armv8.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/CMSIS/Include/tz_context.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/croutine.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/StackMacros.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/list.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/message_buffer.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_prototypes.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/task.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/list.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/queue.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/tasks.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Middlewares/Third_Party/FreeRTOS/Source/timers.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/STM32F446RETx_FLASH.ld">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/can.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/dma.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/freertos.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/gpio.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/main.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/stm32f4xx_hal_msp.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/stm32f4xx_hal_timebase_tim.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/stm32f4xx_it.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/sys.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/syscalls.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/system_stm32f4xx.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/Src/usart.c">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/startup/startup_stm32f446xx.s">
+			<Option target="CANOpen-STM32.elf"/>
+		</Unit>
+		<Unit filename="/home/bochao/Desktop/Project/CANOpen-STM32/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
