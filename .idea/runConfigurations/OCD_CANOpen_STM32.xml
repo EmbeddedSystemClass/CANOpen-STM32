@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration name="OCD CANOpen-STM32" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CANOpen-STM32" TARGET_NAME="CANOpen-STM32.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CANOpen-STM32" RUN_TARGET_NAME="CANOpen-STM32.elf">
+    <openocd gdb-port="3333" telnet-port="4444" board-config="$PROJECT_DIR$/st_nucleo_f4.cfg" reset-type="INIT" download-type="ALWAYS" />
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

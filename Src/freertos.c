@@ -48,13 +48,8 @@
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
-typedef StaticTask_t osStaticThreadDef_t;
 osThreadId_t defaultTaskHandle;
-uint32_t defaultTaskBuffer[ 128 ];
-osStaticThreadDef_t defaultTaskControlBlock;
 osThreadId_t ledTaskHandle;
-uint32_t ledTaskBuffer[ 128 ];
-osStaticThreadDef_t ledTaskControlBlock;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -62,7 +57,7 @@ osStaticThreadDef_t ledTaskControlBlock;
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
-void StartLEDTask(void *argument);
+void StartLedTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -97,24 +92,18 @@ osKernelInitialize();
   /* definition and creation of defaultTask */
   const osThreadAttr_t defaultTask_attributes = {
     .name = "defaultTask",
-    .stack_mem = &defaultTaskBuffer[0],
-    .stack_size = sizeof(defaultTaskBuffer),
-    .cb_mem = &defaultTaskControlBlock,
-    .cb_size = sizeof(defaultTaskControlBlock),
     .priority = (osPriority_t) osPriorityNormal,
+    .stack_size = 128
   };
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* definition and creation of ledTask */
   const osThreadAttr_t ledTask_attributes = {
     .name = "ledTask",
-    .stack_mem = &ledTaskBuffer[0],
-    .stack_size = sizeof(ledTaskBuffer),
-    .cb_mem = &ledTaskControlBlock,
-    .cb_size = sizeof(ledTaskControlBlock),
     .priority = (osPriority_t) osPriorityLow,
+    .stack_size = 128
   };
-  ledTaskHandle = osThreadNew(StartLEDTask, NULL, &ledTask_attributes);
+  ledTaskHandle = osThreadNew(StartLedTask, NULL, &ledTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -140,22 +129,24 @@ void StartDefaultTask(void *argument)
   /* USER CODE END StartDefaultTask */
 }
 
-/* USER CODE BEGIN Header_StartLEDTask */
+/* USER CODE BEGIN Header_StartLedTask */
 /**
 * @brief Function implementing the ledTask thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartLEDTask */
-void StartLEDTask(void *argument)
+/* USER CODE END Header_StartLedTask */
+void StartLedTask(void *argument)
 {
-  /* USER CODE BEGIN StartLEDTask */
+  /* USER CODE BEGIN StartLedTask */
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    osDelay(200);
+    HAL_GPIO_TogglePin(userLED_GPIO_Port, userLED_Pin);
+
   }
-  /* USER CODE END StartLEDTask */
+  /* USER CODE END StartLedTask */
 }
 
 /* Private application code --------------------------------------------------*/
