@@ -1,3 +1,0 @@
-/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/CMakeFiles/CANOpen-STM32.elf.dir
-/home/bochao/Desktop/Project/CANOpen-STM32/cmake-build-debug/CMakeFiles/edit_cache.dir
