@@ -34,6 +34,8 @@ extern UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN Private defines */
 
+#define UART_BUF_SIZE (256)
+
 /* USER CODE END Private defines */
 
 void MX_USART2_UART_Init(void);

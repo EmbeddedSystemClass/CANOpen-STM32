@@ -22,6 +22,7 @@
 
 /* USER CODE BEGIN 0 */
 
+#include <stdio.h>
 #include <stdarg.h>
 
 /* USER CODE END 0 */
@@ -128,14 +129,27 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 void UART_Printf(UART_HandleTypeDef * uartHandle, char *fmt, ...)
 {
     va_list ap;
-    char str_buf[256];
+    char str_buf[UART_BUF_SIZE];
+    int str_len;
+
+    str_buf[0] = 'B';
+    str_buf[1] = 'o';
+    str_buf[2] = 'a';
+    str_buf[3] = 'r';
+    str_buf[4] = 'd';
+    str_buf[5] = '-';
+    str_buf[6] = 'I';
+    str_buf[7] = 'n';
+    str_buf[8] = 'f';
+    str_buf[9] = 'o';
+    str_buf[10] = ':';
 
     va_start(ap,fmt);
 
-    vsprintf(str_buf,fmt,ap);
-
+    str_len = vsprintf(str_buf+11,fmt,ap);
     /* copy str_buf to UART DMA buffer. */
-
+    HAL_UART_Transmit_DMA(uartHandle, str_buf, (str_len + 11));
+    
     va_end(ap);
 }
 
