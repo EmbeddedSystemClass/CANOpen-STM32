@@ -21,7 +21,7 @@
 #include "can.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "usart.h"
 /* USER CODE END 0 */
 
 CAN_HandleTypeDef hcan1;
@@ -74,8 +74,6 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* CAN1 interrupt Init */
-    HAL_NVIC_SetPriority(CAN1_TX_IRQn, 5, 0);
-    HAL_NVIC_EnableIRQ(CAN1_TX_IRQn);
     HAL_NVIC_SetPriority(CAN1_RX0_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(CAN1_RX0_IRQn);
     HAL_NVIC_SetPriority(CAN1_RX1_IRQn, 5, 0);
@@ -106,7 +104,6 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_11|GPIO_PIN_12);
 
     /* CAN1 interrupt Deinit */
-    HAL_NVIC_DisableIRQ(CAN1_TX_IRQn);
     HAL_NVIC_DisableIRQ(CAN1_RX0_IRQn);
     HAL_NVIC_DisableIRQ(CAN1_RX1_IRQn);
     HAL_NVIC_DisableIRQ(CAN1_SCE_IRQn);
@@ -117,6 +114,29 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 } 
 
 /* USER CODE BEGIN 1 */
+
+CAN_TxHeaderTypeDef CAN_TxMsg;
+CAN_RxHeaderTypeDef CAN_RxMsg;
+
+void User_CAN_Init(void)
+{
+  CAN_FilterTypeDef CAN_Filter_Config;
+  HAL_StatusTypeDef HAL_Status;
+
+  CAN_TxMsg.IDE = CAN_ID_TYPE;
+  CAN_TxMsg.RTR = CAN_FRAME_TYPE;
+
+  /* one can filter instance. for can1, index between 0 ~ 13 */
+  CAN_Filter_Config.FilterBank = 0;
+
+  /* to filter a group id, use maskmode */
+  /* to filter a specific id, use listmode */
+  CAN_Filter_Config.FilterMode = CAN_FILTERMODE_IDMASK;
+
+  /* for 32bit stdid[10:0] extid[17:0] ide rtr */
+  /* for 16bit stdid[10:0] extid[17:15] ide rtr */
+  CAN_Filter_Config.FilterScale = CAN_FILTERSCALE_16BIT;
+}
 
 /* USER CODE END 1 */
 

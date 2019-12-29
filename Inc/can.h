@@ -27,18 +27,30 @@
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+  
 /* USER CODE END Includes */
 
 extern CAN_HandleTypeDef hcan1;
 
+extern CAN_TxHeaderTypeDef CAN_TxMsg;
+extern CAN_RxHeaderTypeDef CAN_RxMsg;
+
 /* USER CODE BEGIN Private defines */
+#define CAN_ID_TYPE CAN_ID_STD
+#define CAN_FRAME_TYPE CAN_RTR_DATA
+
+#define F446_NUCLEO_BOARD_CAN_ID  0x001
+
+#define CAN1FIFO CAN_RX_FIFO0
+#define CAN2FIFO CAN_RX_FIFO1
 
 /* USER CODE END Private defines */
 
 void MX_CAN1_Init(void);
 
 /* USER CODE BEGIN Prototypes */
+
+void User_CAN_Init(void);
 
 /* USER CODE END Prototypes */
 
