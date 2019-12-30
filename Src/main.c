@@ -95,7 +95,10 @@ int main(void)
   MX_CAN1_Init();
   MX_USART2_UART_Init();
   MX_DMA_Init();
+
   /* USER CODE BEGIN 2 */
+
+  User_CAN_Init();
 
   /* USER CODE END 2 */
 

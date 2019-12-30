@@ -131,11 +131,73 @@ void User_CAN_Init(void)
 
   /* to filter a group id, use maskmode */
   /* to filter a specific id, use listmode */
-  CAN_Filter_Config.FilterMode = CAN_FILTERMODE_IDMASK;
 
-  /* for 32bit stdid[10:0] extid[17:0] ide rtr */
-  /* for 16bit stdid[10:0] extid[17:15] ide rtr */
-  CAN_Filter_Config.FilterScale = CAN_FILTERSCALE_16BIT;
+  /* for bank0, setup list mode */
+  CAN_Filter_Config.FilterMode = CAN_FILTERMODE_IDLIST;
+
+  /* for 32bit filter bit sequence is:
+   stdid[10:3] stid[2:0] exid[17:13] exid[12:5] exid[4:0] ide rtr 0
+   so stdid need left shift 21bit
+   and extid need left shift 3bit
+  */
+
+  /* for 16bit filter bit sequence is:
+   stid[10:3] stid[2:0] rtr ide exd[17:15]
+   so if std id, need to left shift 5bit
+  */
+  CAN_Filter_Config.FilterScale = CAN_FILTERSCALE_32BIT;
+  CAN_Filter_Config.FilterIdHigh = F446_NUCLEO_BOARD_CAN_ID << 21;
+  CAN_Filter_Config.FilterFIFOAssignment = CAN1FIFO;
+
+  CAN_Filter_Config.FilterActivation = ENABLE;
+  CAN_Filter_Config.SlaveStartFilterBank = 0;
+
+  HAL_Status = HAL_CAN_ConfigFilter(&hcan1, &CAN_Filter_Config);
+
+
+
+  HAL_Status = HAL_CAN_Start(&hcan1);
+
+  if(HAL_Status != HAL_OK)
+  {
+    UART_Printf(&huart2, "Start CAN1 device failed.\r\n");
+  }
+
+  /*
+  CAN_FLAG_FMP0,
+  CAN_FLAG_FMP1   : FIFO 0 and 1 Message Pending Flags 
+                    set to signal that messages are pending in the receive FIFO.
+                    These Flags are cleared only by hardware. 
+
+  CAN_FLAG_FF0,
+  CAN_FLAG_FF1    : FIFO 0 and 1 Full Flags
+                    set when three messages are stored in the selected FIFO.                        
+
+  CAN_FLAG_FOV0              
+  CAN_FLAG_FOV1   : FIFO 0 and 1 Overrun Flags
+                    set when a new message has been received and passed set the filter while the FIFO was full. 
+   */
+
+  HAL_Status = HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
+  if(HAL_Status != HAL_OK)
+  {
+    UART_Printf(&huart2, "Register CAN receive interrupt notification failed. \r\n");
+  }
+
+  HAL_Status = HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_FULL);
+  if(HAL_Status != HAL_OK)
+  {
+    UART_Printf(&huart2, "Register CAN receive FIFO full interrupt failed.\r\n");
+  }
+
+  HAL_Status = HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_OVERRUN);
+  if(HAL_Status != HAL_OK)
+  {
+    UART_Printf(&huart2, "Register CAN receive FIFO overflow interrupt failed.\r\n");
+  }
+
+
+  UART_Printf(&huart2, "CAN Device user initialisation finishged.\r\n");
 }
 
 /* USER CODE END 1 */
