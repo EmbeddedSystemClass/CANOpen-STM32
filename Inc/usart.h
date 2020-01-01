@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -34,15 +34,15 @@ extern UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN Private defines */
 
-#define UART_BUF_SIZE (256)
-
+#define UART_BUF_SIZE (512)
+#define UART_PORT (huart2)
 /* USER CODE END Private defines */
 
 void MX_USART2_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
-void UART_Printf(UART_HandleTypeDef * uartHandle, char *fmt, ...);
+void UART_Printf(char *fmt, ...);
 
 /* USER CODE END Prototypes */
 

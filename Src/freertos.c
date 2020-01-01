@@ -26,7 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
-
+#include "usart.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,8 +48,16 @@
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
+typedef StaticTask_t osStaticThreadDef_t;
 osThreadId_t defaultTaskHandle;
+uint32_t defaultTaskBuffer[ 128 ];
+osStaticThreadDef_t defaultTaskControlBlock;
 osThreadId_t ledTaskHandle;
+uint32_t ledTaskBuffer[ 128 ];
+osStaticThreadDef_t ledTaskControlBlock;
+osThreadId_t uartPrintTaskHandle;
+uint32_t uartPrintTaskBuffer[ 512 ];
+osStaticThreadDef_t uartPrintTaskControlBlock;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -58,6 +66,7 @@ osThreadId_t ledTaskHandle;
 
 void StartDefaultTask(void *argument);
 void StartLedTask(void *argument);
+void StartUartPrintTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -92,18 +101,35 @@ osKernelInitialize();
   /* definition and creation of defaultTask */
   const osThreadAttr_t defaultTask_attributes = {
     .name = "defaultTask",
+    .stack_mem = &defaultTaskBuffer[0],
+    .stack_size = sizeof(defaultTaskBuffer),
+    .cb_mem = &defaultTaskControlBlock,
+    .cb_size = sizeof(defaultTaskControlBlock),
     .priority = (osPriority_t) osPriorityNormal,
-    .stack_size = 128
   };
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* definition and creation of ledTask */
   const osThreadAttr_t ledTask_attributes = {
     .name = "ledTask",
+    .stack_mem = &ledTaskBuffer[0],
+    .stack_size = sizeof(ledTaskBuffer),
+    .cb_mem = &ledTaskControlBlock,
+    .cb_size = sizeof(ledTaskControlBlock),
     .priority = (osPriority_t) osPriorityLow,
-    .stack_size = 128
   };
   ledTaskHandle = osThreadNew(StartLedTask, NULL, &ledTask_attributes);
+
+  /* definition and creation of uartPrintTask */
+  const osThreadAttr_t uartPrintTask_attributes = {
+    .name = "uartPrintTask",
+    .stack_mem = &uartPrintTaskBuffer[0],
+    .stack_size = sizeof(uartPrintTaskBuffer),
+    .cb_mem = &uartPrintTaskControlBlock,
+    .cb_size = sizeof(uartPrintTaskControlBlock),
+    .priority = (osPriority_t) osPriorityLow,
+  };
+  uartPrintTaskHandle = osThreadNew(StartUartPrintTask, NULL, &uartPrintTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -142,11 +168,30 @@ void StartLedTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(200);
+    osDelay(500);
     HAL_GPIO_TogglePin(userLED_GPIO_Port, userLED_Pin);
+    UART_Printf("Toggle LED Pin.\r\n");
 
   }
   /* USER CODE END StartLedTask */
+}
+
+/* USER CODE BEGIN Header_StartUartPrintTask */
+/**
+* @brief Function implementing the uartPrintTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartUartPrintTask */
+void StartUartPrintTask(void *argument)
+{
+  /* USER CODE BEGIN StartUartPrintTask */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartUartPrintTask */
 }
 
 /* Private application code --------------------------------------------------*/

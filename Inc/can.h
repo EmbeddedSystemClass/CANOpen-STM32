@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -31,9 +31,6 @@
 /* USER CODE END Includes */
 
 extern CAN_HandleTypeDef hcan1;
-
-extern CAN_TxHeaderTypeDef CAN_TxMsg;
-extern CAN_RxHeaderTypeDef CAN_RxMsg;
 
 /* USER CODE BEGIN Private defines */
 #define CAN_ID_TYPE CAN_ID_STD

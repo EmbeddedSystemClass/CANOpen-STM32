@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -160,7 +160,7 @@ void User_CAN_Init(void)
 
   if(HAL_Status != HAL_OK)
   {
-    UART_Printf(&huart2, "Start CAN1 device failed.\r\n");
+    UART_Printf("Start CAN1 device failed.\r\n");
   }
 
   /*
@@ -181,23 +181,23 @@ void User_CAN_Init(void)
   HAL_Status = HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
   if(HAL_Status != HAL_OK)
   {
-    UART_Printf(&huart2, "Register CAN receive interrupt notification failed. \r\n");
+    UART_Printf("Register CAN receive interrupt notification failed. \r\n");
   }
 
   HAL_Status = HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_FULL);
   if(HAL_Status != HAL_OK)
   {
-    UART_Printf(&huart2, "Register CAN receive FIFO full interrupt failed.\r\n");
+    UART_Printf("Register CAN receive FIFO full interrupt failed.\r\n");
   }
 
   HAL_Status = HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_OVERRUN);
   if(HAL_Status != HAL_OK)
   {
-    UART_Printf(&huart2, "Register CAN receive FIFO overflow interrupt failed.\r\n");
+    UART_Printf("Register CAN receive FIFO overflow interrupt failed.\r\n");
   }
 
 
-  UART_Printf(&huart2, "CAN Device user initialisation finishged.\r\n");
+  UART_Printf("CAN Device user initialization finished.\r\n");
 }
 
 /* USER CODE END 1 */
